@@ -1,18 +1,5 @@
-##NAME: Sylvia Yakoo
-
-#FINAL PROJECT
-
-##SPECIAL NOTES: DO NOT INCLUDE ANY FUNCTION CALLS IN YOUR FINAL CODE
-## ALSO, USE THE FUNCTION NAMES EXACTLY AS I HAVE WRITTEN THEM
-##  AND DO NOT CHANGE THE NUMBER OR TYPES OF PARAMETERS
 
 #Function 1: TRANSLATE Reads in a DNA sequence fasta file,
-#and outputs a Fasta file of protein translations and it
-#should be able to do standard (eukaryotic) translation only.
-# In other words, don't use the mitochondrial code and assume that the
-# DNA you have is eukaryotic protein coding DNA.
-
-#(You don't have to change the names of the fasta sequence titles.)
 standard_code = {
      "UUU": "F", "UUC": "F", "UUA": "L", "UUG": "L", "UCU": "S",
      "UCC": "S", "UCA": "S", "UCG": "S", "UAU": "Y", "UAC": "Y",
@@ -56,12 +43,8 @@ def DNA2Prot(f1, f2="translated_fasta.txt"):
     fout.close()
     return 1
     
-#out=DNA2Prot("testDNAseq2016.txt","translated_fasta.txt")
 
 #Function 2: Reads in a fasta file of protein sequences,
-#makes a table of amino acids frequencies for each protein
-#sequence and outputs it to an excel readable file (tab delimited).
-
 
 def AAfreq(f1,f2="aatable.xls"):
     fn = open(f1, 'r')
@@ -93,16 +76,7 @@ def AAfreq(f1,f2="aatable.xls"):
 
     return f2
 
-#out=AAfreq("testProtein.txt","aatable.xls")
-
-
-
 #Function 3: Reads in a fasta file and searches for a set of motifs.
-# The function should read in a LIST of motifs and outputs a
-#tab-delimited file of the number of times that each motif was found
-#in each sequence. The file should open nicely in Excel or a spreadsheet program.
-
-
 
 import re
 
@@ -127,8 +101,3 @@ def MotifFinder(f1, motif, f2="motifs.xls"):
         fout.write("\n")
     fout.close()
     return f2
-
-        
-            
-#Example Function Call:
-#MotifFinder("testProtein.txt",["MN[A-Z]","V[A-Z]R[ML]"])
